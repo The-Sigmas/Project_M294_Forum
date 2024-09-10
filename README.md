@@ -75,8 +75,9 @@ Basic Structure of the Site (Navigation system and Frontpage (Routes))
 ### 4. Priority
 -[ ] User can create a Thread
 ### 5. Priority 
--[ ] User can create a comment
+
 ### 6. Priority 
 -[ ] User can see the Thread at the 
-### 7. Piority
 -[ ] User can Delete a Thread
+-[ ] User can create a comment
+### 7. Piority
