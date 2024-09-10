@@ -13,7 +13,7 @@ As a User i want to create a Forum Thread in a category so i can start a discuss
 ### View Threads
 As a User, I want to view a list of all Threads of a category the User selected<br />
 **Acceptance Criteria** <br />
-- Display a list of all threads in a selected category, sorted by the most recent 
+- Display a list of all threads in a selected category, sorted by the most recent (bonus)
 - Each Thread shows his title, author, and the time it was created
 - Clicking on a Thread takes the user to the Thread itself
 ### Post a Reply
@@ -35,9 +35,9 @@ As a user, I want to search for threads by name or similar to the name so i can 
 - A search bar allows users to input words
 - Threads with matching or similar Names in the are displayed as search results
 - Results are shown in order of the most recent and are linked to the thread
-## Like or Dislike Posts 
-As a User i want to like or dislike post so i can express my opinion on the quality of the content <br />
+## Like or Dislike Threads 
+As a User i want to like or dislike threads so i can express my opinion on the quality of the content <br />
  **Acceptance Criteria** <br />
- - a "Like" or "Dislike" button is visible on each post
- - Users can only like or dislike a post once and their vote can be toggled
- - The total number of likes and dislikes is displayed on the post
+ - a "Like" or "Dislike" button is visible on each Thread
+ - Users can only like or dislike a Thread once and their vote can be toggled
+ - The total number of likes and dislikes is displayed on the Thread
