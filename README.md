@@ -1,6 +1,30 @@
 # Project_M294_Forum
 ## Table of Contents
 
+## Project idea
+Bomba-cat and I are building a simple forum for a School project where users can create threads and post replies without needing to log in or create accounts. The goal is to keep the platform easy to use, allowing quick participation in discussions. if we have enough time Users can browse threads. We want Users to add their thoughts to existing Threads. Our focus is on basic functionality, making sure everything works smoothly with React.js and API integration.
+
+## Requirements
+**1. Thread Creation**
+Users can create new threads by adding a title and description for various topics.
+
+**2. Posting Replies**
+Users can reply to existing threads, sharing their opinions or asking questions within the discussion.
+
+**3. Viewing Threads**
+All created threads will be displayed on the main page of the forum, sorted by creation date or another logical order.
+
+**4. Viewing Replies**
+Users can view the replies and posts within a thread, allowing them to follow and engage in the conversation.
+
+**5. Category Navigation (optional)**
+Threads can be organized into categories, enabling users to browse and select specific areas of interest.
+
+**6. Search Function**
+A simple search feature allows users to find threads based on their Names.
+
+## Class Diagram
+![Image of a Component Diagram](images/Component_Diagram.png)
 ## User Story
 ### Forum Thread
 As a User i want to create a Forum Thread in a category so i can start a discussion <br/>
@@ -41,3 +65,18 @@ As a User i want to like or dislike threads so i can express my opinion on the q
  - a "Like" or "Dislike" button is visible on each Thread
  - Users can only like or dislike a Thread once and their vote can be toggled
  - The total number of likes and dislikes is displayed on the Thread
+## Priority Planning
+### 1. Priority
+Basic Structure for the Files and components
+### 2. Priority
+Basic Structure of the Site (Navigation system and Frontpage (Routes))
+### 3. Priority 
+[ ] Connection to the backend
+### 4. Priority
+[ ] User can create a Thread
+### 5. Priority 
+[ ] User can create a comment
+### 6. Priority 
+[ ] User can see the Thread at the 
+### 7. Piority
+[ ] User can Delete a Thread
