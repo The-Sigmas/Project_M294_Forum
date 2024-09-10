@@ -48,10 +48,10 @@ As a User, I want to be able to post a reply to an existing thread so i can talk
 - the reply is added to the thread and displayed by recent
 - Validation ensures that the Name and reply isn't empty
 - Users see a success or error massage based on the outcome of their reply
-### Delete my Posts
-As a User i want to delete my Posts if i want to <br/>
+### Delete my Threads
+As a User i want to delete my Threads if i want to <br/>
 **Acceptance Criteria** <br/>
-- Users see an "Delete" button on Posts
+- Users see an "Delete" button on Threads
 - Clicking "Delete" shows a confirmation before removing the post from the Thread
 ### Search Forum
 As a user, I want to search for threads by name or similar to the name so i can find discussions that iterest me <br/>
@@ -67,17 +67,20 @@ As a User i want to like or dislike threads so i can express my opinion on the q
  - The total number of likes and dislikes is displayed on the Thread
 ## Priority Planning
 ### 1. Priority
-Basic Structure for the Files and components
+- [ ] Basic Structure for the Files and components
 ### 2. Priority
-Basic Structure of the Site (Navigation system and Frontpage (Routes))
+- [ ]Basic Structure of the Site (Navigation system and Frontpage (Routes))
 ### 3. Priority 
--[ ] Connection to the backend
+- [ ] Connection to the backend
 ### 4. Priority
--[ ] User can create a Thread
+- [ ] User can create a Thread
 ### 5. Priority 
-
+- [ ] User can create a comment and is visible
 ### 6. Priority 
-- [ ] User can see the Thread at the 
-- [ ] User can Delete a Thread
-- [ ] User can create a comment
+- [ ] User can see the Thread at the frontpage
 ### 7. Piority
+- [ ] User can Delete a Thread
+### 8. Priority 
+- [ ] functioning Searchbar
+### 9. Priority (Optional)
+- [ ] Add Categories and sortable with Categories
