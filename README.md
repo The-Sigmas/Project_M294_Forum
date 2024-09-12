@@ -69,7 +69,7 @@ As a User i want to like or dislike threads so i can express my opinion on the q
 ### 1. Priority
 - [ ] Basic Structure for the Files and components
 ### 2. Priority
-- [ ]Basic Structure of the Site (Navigation system and Frontpage (Routes))
+- [ ] Basic Structure of the Site (Navigation system and Frontpage (Routes))
 ### 3. Priority 
 - [ ] Connection to the backend
 ### 4. Priority
