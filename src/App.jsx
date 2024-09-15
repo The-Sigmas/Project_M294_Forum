@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 // Components
 import NavBar from "./components/NavBar.jsx"
 import About from "./components/About.jsx"
+import CreateThread from "./components/CreateThread.jsx"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -19,6 +20,7 @@ function App() {
                 <Route path="/" element={<NavBar />}>
                   <Route index element={<h1 className="bg-gradient-to-r from-red-500 via-red-700 to-red-900 bg-clip-text text-transparent">Welcome to The Forums</h1>} />
                     <Route path="/about" element={<About />} />
+                    <Route path="/createthread" element={<CreateThread />}/>
                 </Route>
               </Routes>
             </div>

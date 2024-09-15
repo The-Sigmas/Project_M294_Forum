@@ -3,7 +3,7 @@ import Category from './Category.jsx'
 import '../App.css'
 
 export default function NavBar(){
-  const options = ["Home", "Create Forum", "About"]
+  const options = ["Home", "CreateThread", "About"]
   const option_buttons = options.map(a =>
     <Category s="m-8 text-gray-50 font-mono text-xl hover:text-gray-100 hover:backdrop-blur-sm hover:bg-white/30 rounded p-1" name={a} />
   )
