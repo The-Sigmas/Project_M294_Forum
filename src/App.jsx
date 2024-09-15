@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 // Components
 import NavBar from "./components/NavBar.jsx"
+import About from "./components/About.jsx"
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,12 +16,12 @@ function App() {
   return (<BrowserRouter>
             <div>
               <Routes>
-                <Route path="/" element={<NavBar />} />
+                <Route path="/" element={<NavBar />}>
                   <Route index element={<h1>All Forums</h1>} />
+                    <Route path="/about" element={<About />} />
                 </Route>
               </Routes>
             </div>
-            <p>Hi</p>
           </BrowserRouter>)
 }
 
