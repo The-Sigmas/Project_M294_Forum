@@ -17,7 +17,7 @@ function App() {
             <div>
               <Routes>
                 <Route path="/" element={<NavBar />}>
-                  <Route index element={<h1>All Forums</h1>} />
+                  <Route index element={<h1 className="bg-gradient-to-r from-red-500 via-red-700 to-red-900 bg-clip-text text-transparent">Welcome to The Forums</h1>} />
                     <Route path="/about" element={<About />} />
                 </Route>
               </Routes>
