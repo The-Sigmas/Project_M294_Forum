@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 
 export default function Category(props) {
-  return (
-    <Link className={`${props.s}`} to={`/${props.name.toLowerCase()}`}>
-      {props.name}
-    </Link>
-  );
+  if ( props.name.toLowerCase() == "home" ) {
+    return (
+      <Link className={`${props.s}`} to={`/`}>
+        {props.name}
+      </Link>
+    );
+  } else {
+    return (
+      <Link className={`${props.s}`} to={`/${props.name.toLowerCase()}`}>
+        {props.name}
+      </Link>
+    );
+  }
 }
