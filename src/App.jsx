@@ -15,8 +15,9 @@ function App() {
   return (<BrowserRouter>
             <div>
               <Routes>
-                <Route path="/" element={<NavBar />}>
-                  <Route index element={<h1>All Forums</h1>}>
+                <Route path="/" element={<NavBar />} />
+                  <Route index element={<h1>All Forums</h1>} />
+                </Route>
               </Routes>
             </div>
             <p>Hi</p>
