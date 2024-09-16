@@ -8,18 +8,15 @@ export default function CreateThread() {
     e.preventDefault();
 
     const payload = {
-      question: title, // The thread title becomes the question
-      answers: [       // The content becomes one or more possible answers (this can be adjusted)
-        {
-          answer: content,
-          correct: true,  // Assuming the initial content is considered correct (adjust as needed)
-        }
-      ],
-      comment: "Initial thread creation", // Placeholder for a comment attribute
+      content: {
+        title: title,
+        content: content,
+        comments: ["Initial Comment"]
+      }
     };
 
     try {
-      const response = await fetch('http://localhost:8080/questions/1', {
+      const response = await fetch('http://localhost:8080/threads/documents', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
