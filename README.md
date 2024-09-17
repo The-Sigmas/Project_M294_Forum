@@ -3,8 +3,6 @@
 
 - [Quick Start](#quick-start)
   - [Installation](#installation)
-    - [React App](#react-app)
-    - [API](#api)
 - [API Documentation](#api-documentation)
 - [Project idea](#project-idea)
 - [Requirements](#requirements)
@@ -131,4 +129,3 @@ We used Chatgpt for the logo creation and the example Threads in Figma <br />
 Lunar-moon gave us the corrected API that we can use Put <br />
 We used Chatgpt to comment our code and for comments(50 - 60% of the comments) <br />
 The rest we either used little help that isn't noteworthy (like for errorcode fixing on stackoverflow) or did it all by ourselves.
-
