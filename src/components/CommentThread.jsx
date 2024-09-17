@@ -11,7 +11,7 @@ export default function CommentThread({ threadId }) {
       .then((res) => res.json())
       .then((threads) => {
         // Find the thread that matches the given threadId
-        const thread = threads.find((t) => t._id === threadId);
+        const thread = threads.find((t) => t.id === threadId);
 
         if (thread) {
           setComments(thread.content.comments || []); // Set existing comments or empty array
@@ -32,7 +32,7 @@ export default function CommentThread({ threadId }) {
     try {
       const response = await fetch('http://localhost:8080/threads/documents');
       const threads = await response.json();
-      const threadToUpdate = threads.find((t) => t._id === threadId);
+      const threadToUpdate = threads.find((t) => t.id === threadId);
 
       if (!threadToUpdate) {
         setResponseMessage('Thread not found.');
@@ -44,7 +44,7 @@ export default function CommentThread({ threadId }) {
       threadToUpdate.content.comments = updatedComments; // Update the comments in the thread
 
       // Send a PUT request to update the thread document
-      const updateResponse = await fetch(`http://localhost:8080/threads/documents/${threadToUpdate._id}`, {
+      const updateResponse = await fetch(`http://localhost:8080/threads/documents/${threadToUpdate.id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
