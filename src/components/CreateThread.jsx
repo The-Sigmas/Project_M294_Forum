@@ -26,6 +26,7 @@ export default function CreateThread() {
 
       if (response.ok) {
         console.log('Thread created successfully!');
+        window.location.reload();
       } else {
         console.error('Failed to create thread');
       }

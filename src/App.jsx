@@ -32,9 +32,11 @@ function App() {
           setData(raw)
         } else {
           console.error('Failed to fetch Raw Data, Status: ', response.status)
+          <Error code={ response.status } />
         }
       } catch (error) {
         console.error('Following error occured: ', error)
+        <Error code={ response.status } />
       }
     }
 
@@ -51,9 +53,9 @@ function App() {
                     {data.length > 0 ? (
                       data.map((doc) => (
                         <Route path={`/threads/${ doc.id }`} element={<ViewThread data={doc.content} id={doc.id} />} />
-                      ))
+                      ).sort((a, b) => b - a))
                     ) : (
-                        <Route path="/error" element={<About />} />
+                        <Route path="/error" element={<Error code="No Thread found" />} />
                     )}
                 </Route>
               </Routes>
