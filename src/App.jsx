@@ -49,7 +49,7 @@ function App() {
                     <Route path="/createthread" element={<CreateThread />}/>
                     {data.length > 0 ? (
                       data.map((doc) => (
-                        <Route path={`/threads/${ doc._id }`} element={<ViewThread id={`${doc._id}`}/>}>
+                        <Route path={`/threads/${ doc._id }`} element={<ViewThread id={`${doc._id}`}/>} />
                       ))
                     ) : (
                         <p>No doc found.</p>
