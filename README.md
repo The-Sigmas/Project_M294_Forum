@@ -18,6 +18,7 @@
 ## Installation
 ### React App
 ```bash
+npm cache clean --force
 npm i && npm run dev
 ```
 ### API
