@@ -32,12 +32,14 @@ export default function CommentThread({ threadId }) {
       const updatedComments = [newComment, ...(threadToUpdate.content.comments || [])];
       threadToUpdate.content.comments = updatedComments;
 
-      const updateResponse = await fetch(`http://localhost:8080/threads/documents/${threadToUpdate.id}`, {
+      const updatedThreads = threads.map((t) => (t.id === threadId ? threadToUpdate : t));
+
+      const updateResponse = await fetch('http://localhost:8080/threads/documents', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content: threadToUpdate.content }),
+        body: JSON.stringify(updatedThreads),
       });
 
       if (updateResponse.ok) {
