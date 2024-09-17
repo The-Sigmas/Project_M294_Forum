@@ -45,12 +45,12 @@ function App() {
             <div>
               <Routes>
                 <Route path="/" element={<NavBar />}>
-                  <Route index element={<ShowThreads data={data}>} />
+                  <Route index element={<ShowThreads data={data} />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/createthread" element={<CreateThread />}/>
                     {data.length > 0 ? (
                       data.map((doc) => (
-                        <Route path={`/threads/${ doc.content.id }`} element={<ViewThread data={`${doc.content}`}/>} />
+                        <Route path={`/threads/${ doc.id }`} element={<ViewThread data={doc.content} />} />
                       ))
                     ) : (
                         <Route path="/error" element={<About />} />
