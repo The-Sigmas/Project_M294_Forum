@@ -20,9 +20,6 @@ Users can view the replies and posts within a thread, allowing them to follow an
 **5. Category Navigation (optional)**
 Threads can be organized into categories, enabling users to browse and select specific areas of interest.
 
-**6. Search Function**
-A simple search feature allows users to find threads based on their Names.
-
 ## Class Diagram
 ![Image of a Component Diagram](images/Component_Diagram.png)
 ## User Story
