@@ -17,7 +17,7 @@ export default function ShowThreads( props ) {
       {data.length > 0 ? (
         data.map((doc) => (
           <Link key={doc.content.id} to={`/threads/${ doc.id }`}>
-            <p>{doc.content.title}</p>
+            <p className="bg-stone-800 p-12 m-8 text-xl text-white">{doc.content.title}</p>
           </Link>
         ))
       ) : (

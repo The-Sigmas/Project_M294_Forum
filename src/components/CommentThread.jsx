@@ -78,8 +78,8 @@ export default function CommentThread({ threadId }) {
       <div className="space-y-4">
         {threadData && threadData.content.comments.length > 0 ? (
           threadData.content.comments.map((comment, index) => (
-            <div key={index} className="border p-3 rounded-lg bg-gray-100">
-              <p>{comment}</p>
+            <div key={index} className="border p-3 rounded bg-stone-800">
+              <p className="text-xl text-white">{comment}</p>
             </div>
           ))
         ) : (
