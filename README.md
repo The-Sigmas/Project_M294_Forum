@@ -59,7 +59,10 @@ As a user, I want to search for threads by name or similar to the name so i can 
 - A search bar allows users to input words
 - Threads with matching or similar Names in the are displayed as search results
 - Results are shown in order of the most recent and are linked to the thread
-- 
+
+## Storyboard
+We made a storyboard how the website should look and feel 
+
 ## Priority Planning
 ### 1. Priority
 - [ ] Basic Structure for the Files and components
