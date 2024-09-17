@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import '../App.css'
 //Imports
 import Category from "./Category.jsx"
+import CommentThread from "./CommentThread.jsx"
 
 export default function ViewThread( props ) {
   const [content, setContent] = useState({}) // Initialize with an empty object instead of an empty array
@@ -19,6 +20,7 @@ export default function ViewThread( props ) {
         <>
           <h1>{content.title}</h1>
           <h2>{content.content}</h2>
+          <CommentThread threadId={ props.id }/>
         </>
       ) : (
         <p>Error getting content</p>
