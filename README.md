@@ -46,19 +46,13 @@ As a User, I want to be able to post a reply to an existing thread so i can talk
 - A reply form is visible after the thread
 - Users can input their reply and submit it
 - the reply is added to the thread and displayed by recent
-- Validation ensures that the Name and reply isn't empty
+- Validation ensures that the reply isn't empty
 - Users see a success or error massage based on the outcome of their reply
 ### Delete my Threads
 As a User i want to delete my Threads if i want to <br/>
 **Acceptance Criteria** <br/>
 - Users see an "Delete" button on Threads
 - Clicking "Delete" shows a confirmation before removing the post from the Thread
-### Search Forum
-As a user, I want to search for threads by name or similar to the name so i can find discussions that iterest me <br/>
-**Acceptance Criteria** <br/>
-- A search bar allows users to input words
-- Threads with matching or similar Names are displayed as search results
-- Results are shown in order of the most recent and are linked to the thread
 
 ## Storyboard
 We made a storyboard how the website should look and feel <br/>
@@ -80,8 +74,6 @@ https://www.figma.com/community/file/1417835678721298054
 - [ ] User can see the Thread at the frontpage
 ### 7. Piority
 - [ ] User can Delete a Thread
-### 8. Priority 
-- [ ] functioning Searchbar
 ### 9. Priority (Optional)
 - [ ] Add Categories and sortable with Categories
 
@@ -94,6 +86,4 @@ we made a Testplan to ensure everything works as intended
 | 3          | Most recent Thread is on top of the Homepage | There are multiple<br>threads and Threads are creatable                                 | 1\. create a Thread<br>2\. Go to the Homepage                      | Your most recent Thread is on top                                                                                          |
 | 4          | Comment a Thread                             | there is a Thread and is<br>Clickable on the<br>Homepage                                | 1\. click on a Thread<br>2\. write a comment                       | Your comment should appear in the Comments section                                                                         |
 | 5          | Comment can’t be empty                       | There is a Thread and is<br>Clickable on the<br>Homepage and you can<br>Create Comments | 1\. write an empty comment                                         | There should be an error massage, that the comment can’t be empty                                                          |
-| 6          | Searching is working correctly               | There are available Threads                                                             | 1\. go to the Home Page<br>2\. Search any desired Thread           | There should be Threads with the content of the search or are similar to it                                                |
-| 7          | Searching with no Matches                    | The search is working                                                                   | 1\. search an not existing thread                                  | There should be a message that there is no Thread with this name                                                           |
 | 8          | Delete a Thread                              | Threads are creatable                                                                   | 1\. go to a Thread<br>2\. click the delete Button                  | There should be a warning before you delete it if you click yes it should delete it if you click cancel it should be there |
