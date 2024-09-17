@@ -71,7 +71,7 @@ https://www.figma.com/community/file/1417835678721298054
 - [ ] User can see the Thread at the frontpage
 ### 7. Piority
 - [ ] User can Delete a Thread
-### 9. Priority (Optional)
+### 8. Priority (Optional)
 - [ ] Add Categories and sortable with Categories
 
 ## Testplan
@@ -83,4 +83,7 @@ we made a Testplan to ensure everything works as intended
 | 3          | Most recent Thread is on top of the Homepage | There are multiple<br>threads and Threads are creatable                                 | 1\. create a Thread<br>2\. Go to the Homepage                      | Your most recent Thread is on top                                                                                          |
 | 4          | Comment a Thread                             | there is a Thread and is<br>Clickable on the<br>Homepage                                | 1\. click on a Thread<br>2\. write a comment                       | Your comment should appear in the Comments section                                                                         |
 | 5          | Comment can’t be empty                       | There is a Thread and is<br>Clickable on the<br>Homepage and you can<br>Create Comments | 1\. write an empty comment                                         | There should be an error massage, that the comment can’t be empty                                                          |
-| 8          | Delete a Thread                              | Threads are creatable                                                                   | 1\. go to a Thread<br>2\. click the delete Button                  | There should be a warning before you delete it if you click yes it should delete it if you click cancel it should be there |
+| 6         | Delete a Thread                              | Threads are creatable                                                                   | 1\. go to a Thread<br>2\. click the delete Button                  | There should be a warning before you delete it if you click yes it should delete it if you click cancel it should be there |
+
+## Testresults
+
