@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import '../App.css';
+import { Link } from 'react-router-dom'
 //Imports
 import Category from "./Category.jsx";
 import CommentThread from "./CommentThread.jsx";
@@ -38,16 +39,21 @@ export default function ViewThread( props ) {
     <>
       {content ? (
         <>
-          <h1>{content.title}</h1>
-          <h2>{content.content}</h2>
-          <CommentThread threadId={props.id} />
-          <button
+          <div className="bg-gray-800 p-6 m-2">
+            <h1>{content.title}</h1>
+            <h2>{content.content}</h2>
+          </div>
+          <hr />
+          <Link
+            to="/"
             onClick={handleDelete}
             className="px-4 py-2 bg-red-600 text-white rounded-lg shadow hover:bg-red-700"
           >
             Delete Thread
-          </button>
+          </Link>
           {responseMessage && <p>{responseMessage}</p>}
+          <hr />
+          <CommentThread threadId={props.id} />
         </>
       ) : (
         <p>Error getting content</p>
