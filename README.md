@@ -61,7 +61,9 @@ As a user, I want to search for threads by name or similar to the name so i can 
 - Results are shown in order of the most recent and are linked to the thread
 
 ## Storyboard
-We made a storyboard how the website should look and feel 
+We made a storyboard how the website should look and feel <br/>
+**Figma Link** <br/>
+https://www.figma.com/community/file/1417835678721298054
 
 ## Priority Planning
 ### 1. Priority
