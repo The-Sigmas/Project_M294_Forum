@@ -51,7 +51,7 @@ function App() {
                         <Route path={`/threads/${ doc._id }`} element={<ViewThread id={`${doc._id}`}/>} />
                       ))
                     ) : (
-                        <Route path="/error" element={<About />}>
+                        <Route path="/error" element={<About />} />
                       )}
                 </Route>
               </Routes>
