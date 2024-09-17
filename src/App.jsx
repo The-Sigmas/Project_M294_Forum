@@ -51,7 +51,6 @@ function App() {
                     {data.length > 0 ? (
                       data.map((doc) => (
                         <Route path={`/threads/${ doc.id }`} element={<ViewThread data={doc.content} id={doc.id} />} />
-                        
                       ))) : (
                         <Route path="/error" element={<About />} />
                     )}

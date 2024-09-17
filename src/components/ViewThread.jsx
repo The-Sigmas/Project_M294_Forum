@@ -23,6 +23,7 @@ export default function ViewThread( props ) {
 
       if (response.ok) {
         setResponseMessage('Thread deleted successfully!');
+        window.location.reload()
         // Optionally, redirect or remove the thread from the UI
       } else {
         setResponseMessage('Failed to delete the thread.');
