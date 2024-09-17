@@ -30,7 +30,7 @@ A simple search feature allows users to find threads based on their Names.
 As a User i want to create a Forum Thread in a category so i can start a discussion <br/>
 **Acceptance Criteria:** <br/>
 - As a User can click on Create Thread button
-- A Form is displayed to input the Title, category, Author and content
+- A Form is displayed to input the Title, category and content
 - The thread is displayed in the selected Category after he is finished
 - Validate if the required fields are filled in
 - User sees if the creation was successfull
@@ -38,13 +38,13 @@ As a User i want to create a Forum Thread in a category so i can start a discuss
 As a User, I want to view a list of all Threads of a category the User selected<br />
 **Acceptance Criteria** <br />
 - Display a list of all threads in a selected category, sorted by the most recent (bonus)
-- Each Thread shows his title, author, and the time it was created
+- Each Thread shows his title and the time it was created
 - Clicking on a Thread takes the user to the Thread itself
 ### Post a Reply
 As a User, I want to be able to post a reply to an existing thread so i can talk to the community and join the discoussion <br />
 **Acceptance Criteria** <br />
 - A reply form is visible after the thread
-- Users can input their Name and reply and submit it
+- Users can input their reply and submit it
 - the reply is added to the thread and displayed by recent
 - Validation ensures that the Name and reply isn't empty
 - Users see a success or error massage based on the outcome of their reply
@@ -57,7 +57,7 @@ As a User i want to delete my Threads if i want to <br/>
 As a user, I want to search for threads by name or similar to the name so i can find discussions that iterest me <br/>
 **Acceptance Criteria** <br/>
 - A search bar allows users to input words
-- Threads with matching or similar Names in the are displayed as search results
+- Threads with matching or similar Names are displayed as search results
 - Results are shown in order of the most recent and are linked to the thread
 
 ## Storyboard
