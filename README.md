@@ -1,6 +1,35 @@
 # Project_M294_Forum
 ## Table of Contents
 
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+- [API Documentation](#api-documentation)
+- [Project idea](#project-idea)
+- [Requirements](#requirements)
+- [Class Diagram](#class-diagram)
+- [User Story](#user-story)
+- [Storyboard](#storyboard)
+- [Priority Planning](#priority-planning)
+- [Testplan](#testplan)
+- [Testresults](#testresults)
+- [Help we used](#help-we-used)
+
+
+# Quick Start
+## Installation
+### React App
+```bash
+npm i && npm run dev
+```
+### API
+```bash
+docker compose up -d
+```
+
+## API Documentation
+We use the API to save Threads, comments and other interesting Data
+We used the POST, GET, PUT and DELETE fetches.
+
 ## Project idea
 Bomba-cat and I are building a simple forum for a School project where users can create threads and post replies without needing to log in or create accounts. The goal is to keep the platform easy to use, allowing quick participation in discussions. if we have enough time Users can browse threads. We want Users to add their thoughts to existing Threads. Our focus is on basic functionality, making sure everything works smoothly with React.js and API integration.
 
@@ -19,9 +48,6 @@ Users can view the replies and posts within a thread, allowing them to follow an
 
 **5. Category Navigation (optional)**
 Threads can be organized into categories, enabling users to browse and select specific areas of interest.
-
-**6. Search Function**
-A simple search feature allows users to find threads based on their Names.
 
 ## Class Diagram
 ![Image of a Component Diagram](images/Component_Diagram.png)
@@ -74,7 +100,7 @@ https://www.figma.com/community/file/1417835678721298054
 - [ ] User can see the Thread at the frontpage
 ### 7. Piority
 - [ ] User can Delete a Thread
-### 9. Priority (Optional)
+### 8. Priority (Optional)
 - [ ] Add Categories and sortable with Categories
 
 ## Testplan
@@ -86,4 +112,20 @@ we made a Testplan to ensure everything works as intended
 | 3          | Most recent Thread is on top of the Homepage | There are multiple<br>threads and Threads are creatable                                 | 1\. create a Thread<br>2\. Go to the Homepage                      | Your most recent Thread is on top                                                                                          |
 | 4          | Comment a Thread                             | there is a Thread and is<br>Clickable on the<br>Homepage                                | 1\. click on a Thread<br>2\. write a comment                       | Your comment should appear in the Comments section                                                                         |
 | 5          | Comment can’t be empty                       | There is a Thread and is<br>Clickable on the<br>Homepage and you can<br>Create Comments | 1\. write an empty comment                                         | There should be an error massage, that the comment can’t be empty                                                          |
-| 8          | Delete a Thread                              | Threads are creatable                                                                   | 1\. go to a Thread<br>2\. click the delete Button                  | There should be a warning before you delete it if you click yes it should delete it if you click cancel it should be there |
+| 6         | Delete a Thread                              | Threads are creatable                                                                   | 1\. go to a Thread<br>2\. click the delete Button                  | There should be a warning before you delete it if you click yes it should delete it if you click cancel it should be there |
+
+## Testresults
+| **Test ID** | **Result**                                       | **Date** | **First Name** | **Last Name** |
+| ----------- | ------------------------------------------------ | -------- | -------------- | ------------- |
+| 1           | Thread created                                   | 17.9.24  | Max            | Hasselwander  |
+| 2           | Thread does not send and It says cannot be empty | 17.9.24  | Max            | Hasselwander  |
+| 3           | Most recent Thread isnt on top                          | 17.9.25  | Max            | Hasselwander  |
+| 4           | You can comment on a Thread                      | 17.9.26  | Max            | Hasselwander  |
+| 5           | you ant’t have an empty comment                  | 17.9.27  | Max            | Hasselwander  |
+| 6           | Thread can be deleted                            | 17.9.28  | Max            | Hasselwander  |
+
+## Help we used
+We used Chatgpt for the logo creation and the example Threads in Figma <br />
+Lunar-moon gave us the corrected API that we can use Put <br />
+We used Chatgpt to comment our code and for comments(50 - 60% of the comments) <br />
+The rest we either used little help that isn't noteworthy (like for errorcode fixing on stackoverflow) or did it all by ourselves.
