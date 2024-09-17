@@ -1,6 +1,39 @@
 # Project_M294_Forum
 ## Table of Contents
 
+- [Quick Start](#quick-start)
+  - [Installation](#installation)
+    - [React App](#react-app)
+    - [API](#api)
+- [API Documentation](#api-documentation)
+- [Project idea](#project-idea)
+- [Requirements](#requirements)
+  - [1. Thread Creation](#1-thread-creation)
+  - [2. Posting Replies](#2-posting-replies)
+  - [3. Viewing Threads](#3-viewing-threads)
+  - [4. Viewing Replies](#4-viewing-replies)
+  - [5. Category Navigation (optional)](#5-category-navigation-optional)
+- [Class Diagram](#class-diagram)
+- [User Story](#user-story)
+  - [Forum Thread](#forum-thread)
+  - [View Threads](#view-threads)
+  - [Post a Reply](#post-a-reply)
+  - [Delete my Threads](#delete-my-threads)
+- [Storyboard](#storyboard)
+- [Priority Planning](#priority-planning)
+  - [1. Priority](#1-priority)
+  - [2. Priority](#2-priority)
+  - [3. Priority](#3-priority)
+  - [4. Priority](#4-priority)
+  - [5. Priority](#5-priority)
+  - [6. Priority](#6-priority)
+  - [7. Piority](#7-piority)
+  - [8. Priority (Optional)](#8-priority-optional)
+- [Testplan](#testplan)
+- [Testresults](#testresults)
+- [Help we used](#help-we-used)
+
+
 # Quick Start
 ## Installation
 ### React App
