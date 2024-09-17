@@ -5,15 +5,22 @@ export default function CommentThread({ threadId }) {
   const [newComment, setNewComment] = useState(''); // For new comment input
   const [responseMessage, setResponseMessage] = useState(''); // For status messages
 
-  // Fetch the existing comments when the component mounts or threadId changes
+  // Fetch all threads and find the one with the correct ID
   useEffect(() => {
-    fetch(`http://localhost:8080/threads/documents/${threadId}`)
+    fetch('http://localhost:8080/threads/documents')
       .then((res) => res.json())
-      .then((data) => {
-        setComments(data.content.comments); // Assuming the comments are in content.comments
+      .then((threads) => {
+        // Find the thread that matches the given threadId
+        const thread = threads.find((t) => t._id === threadId);
+
+        if (thread) {
+          setComments(thread.content.comments || []); // Set existing comments or empty array
+        } else {
+          console.error('Thread not found');
+        }
       })
       .catch((error) => {
-        console.error('Error fetching comments:', error);
+        console.error('Error fetching threads:', error);
       });
   }, [threadId]);
 
@@ -21,29 +28,37 @@ export default function CommentThread({ threadId }) {
   const handleAddComment = async (e) => {
     e.preventDefault();
 
-    // Add the new comment to the top of the comments array
-    const updatedComments = [newComment, ...comments];
-
-    // Construct the updated content
-    const updatedContent = {
-      comments: updatedComments,
-    };
-
-    // Send a PUT request to update the thread document with the new comment
+    // Fetch all threads again to find the correct one for updating
     try {
-      const response = await fetch(`http://localhost:8080/threads/documents/${threadId}`, {
+      const response = await fetch('http://localhost:8080/threads/documents');
+      const threads = await response.json();
+      const threadToUpdate = threads.find((t) => t._id === threadId);
+
+      if (!threadToUpdate) {
+        setResponseMessage('Thread not found.');
+        return;
+      }
+
+      // Add the new comment to the top of the existing comments array
+      const updatedComments = [newComment, ...(threadToUpdate.content.comments || [])];
+      threadToUpdate.content.comments = updatedComments; // Update the comments in the thread
+
+      // Send a PUT request to update the thread document
+      const updateResponse = await fetch(`http://localhost:8080/threads/documents/${threadToUpdate._id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content: updatedContent }),
+        body: JSON.stringify({ content: threadToUpdate.content }), // Send the updated content
       });
 
-      if (response.ok) {
+      if (updateResponse.ok) {
         setComments(updatedComments); // Update the state with new comments
         setNewComment(''); // Clear the input field
         setResponseMessage('Comment added successfully!');
       } else {
+        const errorData = await updateResponse.json();
+        console.error('Failed to update thread:', errorData);
         setResponseMessage('Failed to add comment.');
       }
     } catch (error) {
