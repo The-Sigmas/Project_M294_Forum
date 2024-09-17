@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar.jsx"
 import About from "./components/About.jsx"
 import CreateThread from "./components/CreateThread.jsx"
-import ShowThreads from "./components/ShowThreads.jsx"
 
 function App() {
   const [count, setCount] = useState(0)
