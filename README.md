@@ -1,6 +1,21 @@
 # Project_M294_Forum
 ## Table of Contents
 
+# Quick Start
+## Installation
+### React App
+```bash
+npm i && npm run dev
+```
+### API
+```bash
+docker compose up -d
+```
+
+## API Documentation
+We use the API to save Threads, comments and other interesting Data
+We used the POST, GET, PUT and DELETE fetches.
+
 ## Project idea
 Bomba-cat and I are building a simple forum for a School project where users can create threads and post replies without needing to log in or create accounts. The goal is to keep the platform easy to use, allowing quick participation in discussions. if we have enough time Users can browse threads. We want Users to add their thoughts to existing Threads. Our focus is on basic functionality, making sure everything works smoothly with React.js and API integration.
 
