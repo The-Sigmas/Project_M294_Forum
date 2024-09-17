@@ -90,7 +90,7 @@ we made a Testplan to ensure everything works as intended
 | ----------- | ------------------------------------------------ | -------- | -------------- | ------------- |
 | 1           | Thread created                                   | 17.9.24  | Max            | Hasselwander  |
 | 2           | Thread does not send and It says cannot be empty | 17.9.24  | Max            | Hasselwander  |
-| 3           | Most Thread isnt on top                          | 17.9.25  | Max            | Hasselwander  |
+| 3           | Most recent Thread isnt on top                          | 17.9.25  | Max            | Hasselwander  |
 | 4           | You can comment on a Thread                      | 17.9.26  | Max            | Hasselwander  |
 | 5           | you ant’t have an empty comment                  | 17.9.27  | Max            | Hasselwander  |
 | 6           | Thread can be deleted                            | 17.9.28  | Max            | Hasselwander  |
