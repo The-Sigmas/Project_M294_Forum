@@ -59,12 +59,7 @@ As a user, I want to search for threads by name or similar to the name so i can 
 - A search bar allows users to input words
 - Threads with matching or similar Names in the are displayed as search results
 - Results are shown in order of the most recent and are linked to the thread
-## Like or Dislike Threads 
-As a User i want to like or dislike threads so i can express my opinion on the quality of the content <br />
- **Acceptance Criteria** <br />
- - a "Like" or "Dislike" button is visible on each Thread
- - Users can only like or dislike a Thread once and their vote can be toggled
- - The total number of likes and dislikes is displayed on the Thread
+- 
 ## Priority Planning
 ### 1. Priority
 - [ ] Basic Structure for the Files and components
