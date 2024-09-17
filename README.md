@@ -94,3 +94,10 @@ we made a Testplan to ensure everything works as intended
 | 4           | You can comment on a Thread                      | 17.9.26  | Max            | Hasselwander  |
 | 5           | you ant’t have an empty comment                  | 17.9.27  | Max            | Hasselwander  |
 | 6           | Thread can be deleted                            | 17.9.28  | Max            | Hasselwander  |
+
+## Help we used
+We used Chatgpt for the logo creation and the example Threads in Figma <br />
+Lunar-moon gave us the corrected API that we can use Put <br />
+We used Chatgpt to comment our code and for comments(50 - 60% of the comments) <br />
+The rest we either used little help that isn't noteworthy (like for errorcode fixing on stackoverflow) or did it all by ourselves.
+
