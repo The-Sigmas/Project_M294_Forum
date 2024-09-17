@@ -1,56 +1,53 @@
 import { useState, useEffect } from 'react';
 
 export default function CommentThread({ threadId }) {
-  const [comments, setComments] = useState([]);
-  const [newComment, setNewComment] = useState('');
-  const [responseMessage, setResponseMessage] = useState('');
+  const [comments, setComments] = useState([]); // For storing fetched comments
+  const [newComment, setNewComment] = useState(''); // For new comment input
+  const [responseMessage, setResponseMessage] = useState(''); // For status messages
 
+  // Fetch the existing comments when the component mounts or threadId changes
   useEffect(() => {
-    fetch('http://localhost:8080/threads/documents')
+    fetch(`http://localhost:8080/threads/documents/${threadId}`)
       .then((res) => res.json())
-      .then((threads) => {
-        const thread = threads.find((t) => t.id === threadId);
-        if (thread) {
-          setComments(thread.content.comments || []);
-        }
+      .then((data) => {
+        setComments(data.content.comments); // Assuming the comments are in content.comments
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        console.error('Error fetching comments:', error);
+      });
   }, [threadId]);
 
+  // Handle adding a new comment
   const handleAddComment = async (e) => {
     e.preventDefault();
+
+    // Add the new comment to the top of the comments array
+    const updatedComments = [newComment, ...comments];
+
+    // Construct the updated content
+    const updatedContent = {
+      comments: updatedComments,
+    };
+
+    // Send a PUT request to update the thread document with the new comment
     try {
-      const response = await fetch('http://localhost:8080/threads/documents');
-      const threads = await response.json();
-      const threadToUpdate = threads.find((t) => t.id === threadId);
-
-      if (!threadToUpdate) {
-        setResponseMessage('Thread not found.');
-        return;
-      }
-
-      const updatedComments = [newComment, ...(threadToUpdate.content.comments || [])];
-      threadToUpdate.content.comments = updatedComments;
-
-      const updatedThreads = threads.map((t) => (t.id === threadId ? threadToUpdate : t));
-
-      const updateResponse = await fetch('http://localhost:8080/threads/documents', {
+      const response = await fetch(`http://localhost:8080/threads/documents/${threadId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(updatedThreads),
+        body: JSON.stringify({ content: updatedContent }),
       });
 
-      if (updateResponse.ok) {
-        setComments(updatedComments);
-        setNewComment('');
+      if (response.ok) {
+        setComments(updatedComments); // Update the state with new comments
+        setNewComment(''); // Clear the input field
         setResponseMessage('Comment added successfully!');
       } else {
         setResponseMessage('Failed to add comment.');
       }
     } catch (error) {
-      console.error(error);
+      console.error('Error adding comment:', error);
       setResponseMessage('An error occurred.');
     }
   };
@@ -58,6 +55,8 @@ export default function CommentThread({ threadId }) {
   return (
     <div className="space-y-6">
       <h3 className="text-xl font-semibold">Comments</h3>
+
+      {/* Form to add a new comment */}
       <form onSubmit={handleAddComment} className="space-y-4">
         <textarea
           value={newComment}
@@ -74,8 +73,10 @@ export default function CommentThread({ threadId }) {
         </button>
       </form>
 
+      {/* Display response message if available */}
       {responseMessage && <p>{responseMessage}</p>}
 
+      {/* Display all comments */}
       <div className="space-y-4">
         {comments.length > 0 ? (
           comments.map((comment, index) => (
