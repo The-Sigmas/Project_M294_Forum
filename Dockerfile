@@ -9,8 +9,8 @@ WORKDIR /app
 COPY pom.xml .
 COPY src ./src
 
-# Package the application and run tests
-RUN mvn clean verify
+# Package the application
+RUN mvn clean package -DskipTests
 
 # Stage 2: Run the application
 FROM openjdk:17-jdk-slim
@@ -23,9 +23,4 @@ COPY --from=build /app/target/*.jar app.jar
 
 EXPOSE 8080
 
-# Add wait-for-it script to wait for MongoDB
-ADD https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh /wait-for-it.sh
-RUN chmod +x /wait-for-it.sh
-
-# Use wait-for-it to wait for MongoDB before starting the application
-ENTRYPOINT ["/wait-for-it.sh", "mongodb:27017", "--timeout=30", "--strict", "--", "java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]

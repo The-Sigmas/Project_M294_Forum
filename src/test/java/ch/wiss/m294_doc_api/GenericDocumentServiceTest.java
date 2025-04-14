@@ -127,7 +127,7 @@ public class GenericDocumentServiceTest {
 
         // Assert
         assertFalse(result);
-        verify(mongoTemplate, never()).remove(any(), any());
+        verify(mongoTemplate, never()).remove(any(GenericDocument.class), eq(COLLECTION_NAME));
     }
 
     @Test
