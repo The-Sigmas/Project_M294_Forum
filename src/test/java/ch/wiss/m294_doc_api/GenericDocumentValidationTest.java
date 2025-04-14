@@ -46,7 +46,9 @@ public class GenericDocumentValidationTest {
         
         Set<ConstraintViolation<GenericDocument>> violations = validator.validate(document);
         assertTrue(violations.isEmpty());
-        assertEquals(2.0, ((Map<String, Object>)document.getContent()).get("version"));
-        assertEquals("John Doe", ((Map<String, Object>)((Map<String, Object>)document.getContent().get("author")).get("name"));
+        assertEquals(2.0, document.getContent().get("version"));
+        @SuppressWarnings("unchecked")
+        Map<String, Object> authorMap = (Map<String, Object>) document.getContent().get("author");
+        assertEquals("John Doe", authorMap.get("name"));
     }
 }
