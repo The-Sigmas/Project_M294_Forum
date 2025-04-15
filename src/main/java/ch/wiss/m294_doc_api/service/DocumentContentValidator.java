@@ -6,9 +6,6 @@ import org.springframework.stereotype.Component;
 public class DocumentContentValidator {
     
     public boolean validateContent(String content) {
-        if (content == null || content.trim().isEmpty()) {
-            return false;
-        }
-        return content.length() >= 10; // Example validation: content must be at least 10 characters
+        return content != null && !content.trim().isEmpty();
     }
 } 

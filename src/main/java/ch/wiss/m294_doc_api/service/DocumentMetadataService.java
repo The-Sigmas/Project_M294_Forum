@@ -4,4 +4,5 @@ import java.util.Map;
 
 public interface DocumentMetadataService {
     boolean validateMetadata(Map<String, Object> metadata);
+    boolean deleteById(String id);
 } 

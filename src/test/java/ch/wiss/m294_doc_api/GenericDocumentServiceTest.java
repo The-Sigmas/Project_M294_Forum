@@ -7,6 +7,10 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
+import com.mongodb.client.result.DeleteResult;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -104,16 +108,20 @@ public class GenericDocumentServiceTest {
     @Test
     void testDeleteByIdExisting() {
         // Arrange
-        when(mongoTemplate.findById(eq("test123"), eq(GenericDocument.class), eq(COLLECTION_NAME)))
-            .thenReturn(testDocument);
-        doNothing().when(mongoTemplate).remove(any(GenericDocument.class), eq(COLLECTION_NAME));
+        String id = "123";
+        String collectionName = "test_collection";
+        GenericDocument existingDoc = new GenericDocument();
+        existingDoc.setId(id);
+        
+        when(mongoTemplate.findById(eq(id), eq(GenericDocument.class), eq(collectionName)))
+            .thenReturn(existingDoc);
 
         // Act
-        boolean result = documentService.deleteById(COLLECTION_NAME, "test123");
+        boolean result = documentService.deleteById(collectionName, id);
 
         // Assert
         assertTrue(result);
-        verify(mongoTemplate).remove(testDocument, COLLECTION_NAME);
+        verify(mongoTemplate).remove(existingDoc, collectionName);
     }
 
     @Test

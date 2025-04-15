@@ -16,7 +16,7 @@ export default function CreateThread() {
     };
 
     try {
-      const response = await fetch('http://localhost:8080/threads/documents', {
+      const response = await fetch('http://localhost:8080/api/threads', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

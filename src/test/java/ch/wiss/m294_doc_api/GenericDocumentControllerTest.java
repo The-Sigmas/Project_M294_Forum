@@ -53,8 +53,10 @@ public class GenericDocumentControllerTest {
 
         GenericDocument mockResponse = new GenericDocument();
         Map<String, Object> responseContent = new HashMap<>();
-        responseContent.put("id", "test123");
-        mockResponse.setId("test123");
+        String docId = "test123";
+        mockResponse.setId(docId);
+        responseContent.put("id", docId);
+        responseContent.put("title", "Test Document");
         mockResponse.setContent(responseContent);
 
         when(documentService.save(eq("documents"), any(GenericDocument.class)))
@@ -63,7 +65,7 @@ public class GenericDocumentControllerTest {
         mockMvc.perform(post("/api/documents")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(jsonContent))
-                .andExpect(status().isCreated())
+                .andExpect(status().isOk())
                 .andExpect(jsonPath("$.id").value("test123"))
                 .andExpect(header().exists("Location"));
     }

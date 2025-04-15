@@ -1,5 +1,8 @@
 package ch.wiss.m294_doc_api;
 
+import ch.wiss.m294_doc_api.service.DocumentMetadataService;
+import ch.wiss.m294_doc_api.service.DocumentContentValidator;
+import ch.wiss.m294_doc_api.service.DocumentValidationService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -43,6 +46,8 @@ public class DocumentValidationServiceTest {
         // Arrange
         when(metadataService.validateMetadata(any(Map.class)))
             .thenReturn(true);
+        when(contentValidator.validateContent(any(String.class)))
+            .thenReturn(true);
 
         // Act
         boolean isValid = validationService.validateDocument(testDocument);
@@ -50,11 +55,14 @@ public class DocumentValidationServiceTest {
         // Assert
         assertTrue(isValid);
         verify(metadataService).validateMetadata(any(Map.class));
+        verify(contentValidator).validateContent(any(String.class));
     }
 
     @Test
     void testValidateDocumentWithSpyContentValidator() {
         // Arrange
+        when(metadataService.validateMetadata(any(Map.class)))
+            .thenReturn(true);
         doReturn(true).when(contentValidator).validateContent(any(String.class));
 
         // Act
@@ -68,7 +76,8 @@ public class DocumentValidationServiceTest {
     @Test
     void testValidateDocumentWithRealContentValidation() {
         // Arrange
-        // Using the real implementation of contentValidator (spy)
+        when(metadataService.validateMetadata(any(Map.class)))
+            .thenReturn(true);
         Map<String, Object> invalidContent = new HashMap<>();
         invalidContent.put("title", "");
         invalidContent.put("content", "");

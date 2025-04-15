@@ -15,15 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/{collectionName}/documents")
+@RequestMapping("/api/{collectionName}")
 public class GenericDocumentController {
 
     @Autowired
     private GenericDocumentService genericDocumentService;
 
     @PostMapping
-    public GenericDocument createDocument(@PathVariable String collectionName, @RequestBody GenericDocument document) {
-        return genericDocumentService.save(collectionName, document);
+    public ResponseEntity<GenericDocument> createDocument(@PathVariable String collectionName, @RequestBody GenericDocument document) {
+        GenericDocument savedDoc = genericDocumentService.save(collectionName, document);
+        return ResponseEntity.ok(savedDoc);
     }
 
     @PutMapping("/{id}")

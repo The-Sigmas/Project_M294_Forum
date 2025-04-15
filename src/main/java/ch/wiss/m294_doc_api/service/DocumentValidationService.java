@@ -1,6 +1,7 @@
 package ch.wiss.m294_doc_api.service;
 
 import ch.wiss.m294_doc_api.GenericDocument;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -9,6 +10,7 @@ public class DocumentValidationService {
     private final DocumentMetadataService metadataService;
     private final DocumentContentValidator contentValidator;
 
+    @Autowired
     public DocumentValidationService(DocumentMetadataService metadataService, 
                                    DocumentContentValidator contentValidator) {
         this.metadataService = metadataService;

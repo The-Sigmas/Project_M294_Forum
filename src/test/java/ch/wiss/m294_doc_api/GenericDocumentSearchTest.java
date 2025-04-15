@@ -22,6 +22,8 @@ public class GenericDocumentSearchTest {
 
     @Test
     void testAdvancedDocumentSearch() {
+        // Clean up existing documents
+        mongoTemplate.dropCollection("searchable_docs");
         String collectionName = "searchable_docs";
         
         // Create test documents with different structures
@@ -57,6 +59,12 @@ public class GenericDocumentSearchTest {
         List<GenericDocument> filteredDocs = mongoTemplate.find(complexQuery, GenericDocument.class, collectionName);
         assertEquals(1, filteredDocs.size());
         assertEquals("Programming Guide", filteredDocs.get(0).getContent().get("title"));
+
+        // Search by multiple tags
+        Query multiTagQuery = new Query(Criteria.where("content.tags").all(Arrays.asList("java", "spring")));
+        List<GenericDocument> multiTagDocs = mongoTemplate.find(multiTagQuery, GenericDocument.class, collectionName);
+        assertEquals(1, multiTagDocs.size());
+        assertEquals("Programming Guide", multiTagDocs.get(0).getContent().get("title"));
     }
 
     private void createTestDocument(String title, List<String> tags, String category, double rating) {
