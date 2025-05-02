@@ -20,7 +20,7 @@ function App() {
   useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/threads/documents', {
+        const response = await fetch('http://localhost:8080/api/threads', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
