@@ -1,0 +1,15 @@
+spring:
+  data:
+    mongodb:
+      host: mongodb
+      port: 27017
+      database: m294_doc_api
+      username: root
+      password: example
+      authentication-database: admin
+  mvc:
+    cors:
+      allowed-origins: "http://localhost:5173"
+      allowed-methods: "*"
+      allowed-headers: "*"
+      allow-credentials: true 
