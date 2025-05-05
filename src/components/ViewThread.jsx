@@ -18,7 +18,7 @@ export default function ViewThread( props ) {
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/threads/documents/${props.id}`, {
+      const response = await fetch(`http://localhost:8080/api/threads/${props.id}`, {
         method: 'DELETE',
       });
 

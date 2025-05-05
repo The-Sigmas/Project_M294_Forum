@@ -6,7 +6,7 @@ export default function CommentThread({ threadId }) {
   const [responseMessage, setResponseMessage] = useState('');
 
   useEffect(() => {
-    fetch(`http://localhost:8080/threads/documents/${threadId}`)
+    fetch(`http://localhost:8080/api/threads/${threadId}`)
       .then((res) => res.json())
       .then((data) => {
         setThreadData(data); // Save the entire thread data
@@ -32,7 +32,7 @@ export default function CommentThread({ threadId }) {
     };
 
     try {
-      const response = await fetch(`http://localhost:8080/threads/documents/${threadId}`, {
+      const response = await fetch(`http://localhost:8080/api/threads/${threadId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

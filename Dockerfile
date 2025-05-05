@@ -7,6 +7,7 @@ WORKDIR /app
 
 # Copy the pom.xml and source code
 COPY pom.xml .
+COPY sonar-project.properties .
 COPY src ./src
 
 # Package the application
